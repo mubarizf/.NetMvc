@@ -1,4 +1,4 @@
-This is an easy way to catch errors and register an error, show the error page
+This is an easy way to catch errors and logging error, show the error page
 
 1.add 'Application_Error' to method your Global.asax file. 
 2.add new controller for example ErrorPageController (P.S: you can also use your any existing controller)
