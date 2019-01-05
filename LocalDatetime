@@ -1,0 +1,21 @@
+using System;
+
+namespace TestProject.Common
+{
+    public class LocalDatetime
+    {
+        public static DateTime AzerbaijanStandardTime
+        {
+            get
+            {
+                DateTime serverTime = DateTime.Now; // gives you current Time in server timeZone
+                DateTime utcTime = serverTime.ToUniversalTime(); // convert it to Utc using timezone setting of server computer
+
+                TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("Azerbaijan Standard Time");
+                DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, tzi); // convert from utc to local
+
+                return localTime;
+            }
+        }
+    }
+}
